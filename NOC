@@ -1,0 +1,125 @@
+local noclipGUI = Instance.new("ScreenGui")
+local mainFrame = Instance.new("Frame")
+local titleLabel = Instance.new("TextLabel")
+local toggleButton = Instance.new("TextButton")
+
+noclipGUI.Name = "ScreenGui"
+noclipGUI.Parent = game.CoreGui
+
+mainFrame.Name = "main"
+mainFrame.BackgroundColor3 = Color3.fromRGB(99, 99, 99)
+mainFrame.BackgroundTransparency = 0
+mainFrame.BorderColor3 = Color3.fromRGB(255, 0, 0)
+mainFrame.BorderSizePixel = 2
+mainFrame.Position = UDim2.new(0.001, 0, 0.55, 0)
+mainFrame.Size = UDim2.new(0, 140, 0, 70)
+mainFrame.Active = true
+mainFrame.Draggable = true
+mainFrame.Parent = noclipGUI
+
+titleLabel.Name = "title"
+titleLabel.BackgroundColor3 = Color3.fromRGB(99, 99, 99)
+titleLabel.BackgroundTransparency = 1
+titleLabel.Size = UDim2.new(1, 0, 0.25, 1)
+titleLabel.Active = true
+titleLabel.Font = Enum.Font.Fantasy
+titleLabel.Text = "Noclip Clicker"
+titleLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+titleLabel.TextScaled = true
+titleLabel.Parent = mainFrame
+
+toggleButton.Name = "toggle"
+toggleButton.BackgroundColor3 = Color3.fromRGB(99, 99, 99)
+toggleButton.BackgroundTransparency = 0
+toggleButton.BorderColor3 = Color3.fromRGB(255, 0, 0)
+toggleButton.BorderSizePixel = 2
+toggleButton.AnchorPoint = Vector2.new(0.5, 0.5)
+toggleButton.Position = UDim2.new(0.5, 0, 0.6, 0)
+toggleButton.Size = UDim2.new(0.25, 0, 0.25, 0)
+toggleButton.Active = true
+toggleButton.Font = Enum.Font.Fantasy
+toggleButton.Text = "Off"
+toggleButton.TextColor3 = Color3.fromRGB(255, 0, 0)
+toggleButton.TextScaled = true
+toggleButton.Parent = mainFrame
+
+local connected = false
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+toggleButton.MouseButton1Click:Connect(function()
+	if connected == false then
+		connected = true
+		toggleButton.Text = "On"
+	else
+		connected = false
+		toggleButton.Text = "Off"
+	end
+end)
+local function niggerFunction(theNigger)
+	local transparencyTemp = mouse.Target.Transparency
+	theNigger.Transparency = 0.9
+	theNigger.CanCollide = false
+	wait(5)
+	theNigger.Transparency = transparencyTemp
+	theNigger.CanCollide = true
+end
+mouse.Button1Down:Connect(function()
+	if connected == true then
+		local theNigger = mouse.Target
+		niggerFunction(theNigger)
+	end
+end)
+
+local red = 255
+local green = 0
+local blue = 0
+while true do
+	for i = 0,255 do
+		green = green + 1
+		mainFrame.BorderColor3 = Color3.fromRGB(red, green, blue)
+		titleLabel.TextColor3 = Color3.fromRGB(red, green, blue)
+		toggleButton.BorderColor3 = Color3.fromRGB(red, green, blue)
+		toggleButton.TextColor3 = Color3.fromRGB(red, green, blue)
+		wait(0.001)
+	end
+	for i = 0,255 do
+		blue = blue + 1
+		mainFrame.BorderColor3 = Color3.fromRGB(red, green, blue)
+		titleLabel.TextColor3 = Color3.fromRGB(red, green, blue)
+		toggleButton.BorderColor3 = Color3.fromRGB(red, green, blue)
+		toggleButton.TextColor3 = Color3.fromRGB(red, green, blue)
+		wait(0.001)
+	end
+	for i = 0,255 do
+		red = red - 1
+		mainFrame.BorderColor3 = Color3.fromRGB(red, green, blue)
+		titleLabel.TextColor3 = Color3.fromRGB(red, green, blue)
+		toggleButton.BorderColor3 = Color3.fromRGB(red, green, blue)
+		toggleButton.TextColor3 = Color3.fromRGB(red, green, blue)
+		wait(0.001)
+	end
+	for i = 0,255 do
+		green = green - 1
+		mainFrame.BorderColor3 = Color3.fromRGB(red, green, blue)
+		titleLabel.TextColor3 = Color3.fromRGB(red, green, blue)
+		toggleButton.BorderColor3 = Color3.fromRGB(red, green, blue)
+		toggleButton.TextColor3 = Color3.fromRGB(red, green, blue)
+		wait(0.001)
+	end
+	for i = 0,255 do
+		blue = blue - 1
+		mainFrame.BorderColor3 = Color3.fromRGB(red, green, blue)
+		titleLabel.TextColor3 = Color3.fromRGB(red, green, blue)
+		toggleButton.BorderColor3 = Color3.fromRGB(red, green, blue)
+		toggleButton.TextColor3 = Color3.fromRGB(red, green, blue)
+		wait(0.001)
+	end
+	for i = 0,255 do
+		red = red + 1
+		mainFrame.BorderColor3 = Color3.fromRGB(red, green, blue)
+		titleLabel.TextColor3 = Color3.fromRGB(red, green, blue)
+		toggleButton.BorderColor3 = Color3.fromRGB(red, green, blue)
+		toggleButton.TextColor3 = Color3.fromRGB(red, green, blue)
+		wait(0.001)
+	end
+end
